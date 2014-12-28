@@ -1,3 +1,7 @@
+body {
+    background-color: #585859;
+}
+
 /* fix the width of the -webkit-transform when the menu shows */
 .snap-drawer {
     width: 266px;
