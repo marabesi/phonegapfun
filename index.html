@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="phonegapfun">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="bower_components/snapjs/snap.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Phonegap Apps</title>
+    </head>
+
+    <body ng-controller="DefaultController">
+        <div class="snap-drawer snap-drawer-left">            
+            <ul id="menu" ng-click="closeMenu()">
+                <li><a href="#/detect-platform">Detect platform</a></li>
+                <li><a href="#/battery-status">Battery Status</a></li>
+            </ul>
+        </div>
+
+        <div id="content" class="snap-content">
+            <div id="toolbar">
+                <button id="open-left" ng-click="openMenu()"></button>
+                <div ng-view></div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="bower_components/snapjs/snap.js"></script>
+
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/controllers/DetectPlatformController.js"></script>
+        <script type="text/javascript" src="js/controllers/BatteryStatusController.js"></script>
+
+        <script type="text/javascript">
+            /* Prevent Safari opening links when viewing as a Mobile App */
+            (function (a, b, c) {
+                if (c in b && b[c]) {
+                    var d, e = a.location,
+                        f = /^(a|html)$/i;
+                    a.addEventListener("click", function (a) {
+                        d = a.target;
+                        while (!f.test(d.nodeName)) d = d.parentNode;
+                        "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href)
+                    }, !1)
+                }
+            })(document, window.navigator, "standalone");
+        </script>
+    </body>
+</html>
