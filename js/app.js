@@ -7,6 +7,9 @@ app.config(function ($routeProvider) {
     }).when('/battery-status', {
         templateUrl: 'partials/battery-status.html',
         controller: 'BatteryStatusController'
+    }).when('/camera', {
+        templateUrl: 'partials/camera.html',
+        controller: 'CameraController'
     }).otherwise({
         redirectTo: '/detect-platform'
     });
