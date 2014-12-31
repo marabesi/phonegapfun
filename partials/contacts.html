@@ -1,6 +1,6 @@
 <ion-view view-title="Contact List">
     <ion-content class="padding" ng-controller="ContactsController">
-        <button ng-click="findContacts()">Find contacts!</button>
+        <a ng-click="findContacts()" class="button icon ion-search"></a>
 
         <ul>
             <li ng-repeat="contact in contactList">
