@@ -1,5 +1,16 @@
 var app = angular.module('phonegapfun', ['ionic']);
 
+app.directive('cordovaReady', function ($document) {
+    return {
+        restrict: 'A',
+        link: function (scope) {
+            angular.element($document).on('deviceready', function (event) {
+                scope.$broadcast('cordova::deviceready', event);
+            });
+        }
+    }
+});
+
 app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('fun', {

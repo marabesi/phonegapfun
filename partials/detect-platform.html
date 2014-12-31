@@ -1,5 +1,10 @@
 <ion-view view-title="Detect Platform">
     <ion-content class="padding" ng-controller="DetectPlatformController">
-        <p>This device is running <span>{{msg}}</span></p>
+        <div class="list" cordova-ready>
+            <a class="item item-icon-left">{{msg}}</a>
+            <a class="item item-icon-left">{{deviceInformation.platform}}</a>
+            <a class="item item-icon-left">{{deviceInformation.uuid}}</a>
+            <a class="item item-icon-left">{{deviceInformation.version}}</a>
+        </div>
     </ion-content>
 </ion-view>

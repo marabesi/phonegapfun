@@ -1,21 +1,39 @@
-app.controller('DetectPlatformController', ['$scope',
-    function ($scope) {
-        $scope.detectPlatform = function () {
-            var userAgent = navigator.userAgent;
-            var msg = "Sorry! Can't detect the platform!";
+app.factory('DeviceInformation', function () {
+    return {
+        get: function () {
+            var deviceInformation = {
+                'platform': device.platform,
+                'uuid': device.uuid,
+                'version': device.version
+            };
 
-            if (userAgent.match(/(iPhone|iPad|iPod)/)) {
-                msg = 'iOS';
-            } else if (userAgent.match(/(Android)/)) {
-                msg = 'Android';
-            } else if (userAgent.match(/(BB10)/)) {
-                msg = 'BlackBerry10';
-            } else if (userAgent.match(/(Windows Phone)/)) {
-                msg = 'Windows Phone';
-            }
+            return deviceInformation;
+        }
+    }
+});
 
-            $scope.msg = msg;
+app.controller('DetectPlatformController', function ($scope, $rootScope, DeviceInformation) {
+    $scope.detectPlatform = function () {
+        var userAgent = navigator.userAgent;
+        var msg = "Sorry! Can't detect the user agent!";
+
+        if (userAgent.match(/(iPhone|iPad|iPod)/)) {
+            msg = 'User agent iOS';
+        } else if (userAgent.match(/(Android)/)) {
+            msg = 'User agent Android';
+        } else if (userAgent.match(/(BB10)/)) {
+            msg = 'User agent BlackBerry10';
+        } else if (userAgent.match(/(Windows Phone)/)) {
+            msg = 'User agent Windows Phone';
         }
 
-        $scope.detectPlatform();
-}]);
+        $scope.msg = msg;
+
+        $scope.$on('cordova::deviceready', function () {
+            $rootScope.deviceInformation = DeviceInformation.get();
+            $rootScope.$apply();
+        });
+    }
+
+    $scope.detectPlatform();
+});
