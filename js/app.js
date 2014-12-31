@@ -10,6 +10,9 @@ app.config(function ($routeProvider) {
     }).when('/camera', {
         templateUrl: 'partials/camera.html',
         controller: 'CameraController'
+    }).when('/contacts', {
+        templateUrl: 'partials/contacts.html',
+        controller: 'ContactsController'
     }).otherwise({
         redirectTo: '/detect-platform'
     });
