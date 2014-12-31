@@ -1,7 +1,11 @@
-<button camera ng-model="photos">Take a picture !</button>
+<ion-view view-title="Camera">
+    <ion-content class="padding" ng-controller="CameraController">
+        <button camera ng-model="photos">Take a picture !</button>
 
-<ul ng-repeat="img in pictures">
-    <li>
-        <input type="image" src="{{img}}" alt="error" />
-    </li>
-</ul>
+        <ul ng-repeat="img in pictures">
+            <li>
+                <input type="image" src="{{img}}" alt="error" />
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>

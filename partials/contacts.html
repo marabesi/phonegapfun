@@ -1,9 +1,11 @@
-<div ng-controller="ContactsController">
-    <button ng-click="findContacts();">Find contacts!</button>
-    
-    <ul>
-        <li ng-repeat="contact in contactList">
-            {{contact.displayName}}
-        </li>
-    </ul>
-</div>
+<ion-view view-title="Contact List">
+    <ion-content class="padding" ng-controller="ContactsController">
+        <button ng-click="findContacts()">Find contacts!</button>
+
+        <ul>
+            <li ng-repeat="contact in contactList">
+                {{contact.displayName}}
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>

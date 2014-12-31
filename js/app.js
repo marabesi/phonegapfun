@@ -1,39 +1,48 @@
-var app = angular.module('phonegapfun', ['ngRoute']);
+var app = angular.module('phonegapfun', ['ionic']);
 
-app.config(function ($routeProvider) {
-    $routeProvider.when('/detect-platform', {
-        templateUrl: 'partials/detect-platform.html',
-        controller: 'DetectPlatformController'
-    }).when('/battery-status', {
-        templateUrl: 'partials/battery-status.html',
-        controller: 'BatteryStatusController'
-    }).when('/camera', {
-        templateUrl: 'partials/camera.html',
-        controller: 'CameraController'
-    }).when('/contacts', {
-        templateUrl: 'partials/contacts.html',
-        controller: 'ContactsController'
-    }).otherwise({
-        redirectTo: '/detect-platform'
-    });
-});
-
-app.controller('DefaultController', ['$scope',
-    function ($scope) {
-        $scope.snapper = new Snap({
-            element: document.getElementById('content'),
-            disable: 'right'
-        });
-
-        $scope.openMenu = function () {
-            if ($scope.snapper.state().state == 'left') {
-                $scope.snapper.close();
-            } else {
-                $scope.snapper.open('left');
+app.config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+        .state('fun', {
+            url: '/fun',
+            abstract: true,
+            templateUrl: 'menu.html'
+        })
+        .state('fun.home', {
+            url: '/detect-platform',
+            views: {
+                'menuContent': {
+                    templateUrl: 'partials/detect-platform.html',
+                    controller: 'DetectPlatformController'
+                }
             }
-        };
+        })
+        .state('fun.battery-status', {
+            url: '/battery-status',
+            views: {
+                'menuContent': {
+                    templateUrl: 'partials/battery-status.html',
+                    controller: 'BatteryStatusController'
+                }
+            }
+        })
+        .state('fun.camera', {
+            url: '/camera',
+            views: {
+                'menuContent': {
+                    templateUrl: 'partials/camera.html',
+                    controller: 'CameraController'
+                }
+            }
+        })
+        .state('fun.contacts', {
+            url: '/contacts',
+            views: {
+                'menuContent': {
+                    templateUrl: 'partials/contacts.html',
+                    controller: 'ContactsController'
+                }
+            }
+        })
 
-        $scope.closeMenu = function () {
-            $scope.snapper.close();
-        };
-}]);
+    $urlRouterProvider.otherwise('/fun/detect-platform');
+});

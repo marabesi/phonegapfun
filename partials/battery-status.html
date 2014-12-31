@@ -1,4 +1,6 @@
-<div ng-controller="BatteryStatusController" battery>
-    <p>Percentage : <span>{{percentage}}</span>%</p>
-    <p>charging : <span>{{charging}}</span></p>
-</div>
+<ion-view view-title="Battery Status">
+    <ion-content class="padding" ng-controller="BatteryStatusController" battery>
+        <p>Percentage : <span>{{percentage}}</span>%</p>
+        <p>charging : <span>{{charging}}</span></p>
+    </ion-content>
+</ion-view>
