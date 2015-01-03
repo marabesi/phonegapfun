@@ -1,0 +1,11 @@
+<ion-view view-title="Accelerometer">
+    <ion-content class="padding" ng-controller="AccelerometerController">
+        <a class="button icon" ng-click="watchAccelerometer()" ng-show="buttonWatchShow">Watch !</a>
+
+        <div ng-show="!buttonWatchShow">
+            <h3>x: {{x}}</h3>
+            <h3>y: {{y}}</h3>
+            <h3>z: {{z}}</h3>
+        </div>
+    </ion-content>
+</ion-view>

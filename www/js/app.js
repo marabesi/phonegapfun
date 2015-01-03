@@ -54,6 +54,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('fun.accelerometer', {
+            url: '/accelerometer',
+            views: {
+                'menuContent': {
+                    templateUrl: 'partials/accelerometer.html',
+                    controller: 'AccelerometerController'
+                }
+            }
+        })
 
     $urlRouterProvider.otherwise('/fun/detect-platform');
 });
