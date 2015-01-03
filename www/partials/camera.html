@@ -1,11 +1,12 @@
 <ion-view view-title="Camera">
     <ion-content class="padding" ng-controller="CameraController">
-        <a class="button icon ion-camera" camera ng-model="photos"></a>
-        
-        <ul ng-repeat="img in pictures">
-            <li>
-                <input type="image" src="{{img}}" alt="error" />
-            </li>
-        </ul>
+        <div class="list card" ng-repeat="img in pictures">
+            <div class="item item-image">
+                <img src="{{img}}">
+            </div>
+        </div>
     </ion-content>
+    <div class="bar bar-footer">
+        <a class="button button-clear icon ion-camera" camera ng-model="photos"></a>
+    </div>
 </ion-view>
