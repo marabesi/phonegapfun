@@ -1,3 +1,5 @@
+'use strict';
+
 app.factory('Accelerometer', function ($rootScope) {
     return {
         watchAcceleration: function (successCallback, errorCallback, options) {

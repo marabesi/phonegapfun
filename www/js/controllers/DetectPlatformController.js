@@ -1,3 +1,5 @@
+'use strict';
+
 app.factory('DeviceInformation', function () {
     return {
         get: function () {

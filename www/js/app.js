@@ -1,3 +1,5 @@
+'use strict';
+
 var app = angular.module('phonegapfun', ['ionic']);
 
 app.directive('cordovaReady', function ($document) {

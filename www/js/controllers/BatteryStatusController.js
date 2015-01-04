@@ -1,3 +1,5 @@
+'use strict';
+
 app.directive('battery', function ($window) {
     return {
         restrict: 'A',
