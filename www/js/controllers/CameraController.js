@@ -27,13 +27,12 @@ app.directive('camera', function () {
     }
 });
 
-app.controller('CameraController', function ($scope) {
-
-    $scope.pictures = [];
-    $scope.$watch('photos', function (value) {
-        if (value) {
-            $scope.pictures.push(value);
-        }
-    }, true);
-
-});
+app.controller('CameraController', ['$scope',
+    function ($scope) {
+        $scope.pictures = [];
+        $scope.$watch('photos', function (value) {
+            if (value) {
+                $scope.pictures.push(value);
+            }
+        }, true);
+}]);

@@ -1,15 +1,16 @@
 'use strict';
 
-app.directive('battery', function ($window) {
-    return {
-        restrict: 'A',
-        link: function (scope) {
-            angular.element($window).on('batterystatus', function (e) {
-                scope.$broadcast('battery::batterystatus', e);
-            });
+app.directive('battery', ['$window',
+    function ($window) {
+        return {
+            restrict: 'A',
+            link: function (scope) {
+                angular.element($window).on('batterystatus', function (e) {
+                    scope.$broadcast('battery::batterystatus', e);
+                });
+            }
         }
-    }
-});
+}]);
 
 app.controller('BatteryStatusController', ['$scope', '$rootScope',
     function ($scope, $rootScope) {
