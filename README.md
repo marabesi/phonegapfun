@@ -13,3 +13,11 @@ A simple mobile app that uses a lot of phonegap plugins to show how they work :)
 ## Javascript 
 
 * Angular JS
+
+## SASS
+
+The ionic framework by default comes with SASS that we can customize, the easiest way to get start with that is follow the steps bellow :
+
+1. Create you own file **whatever.scss** int the **scss** folder
+2. Then you just have to import that file into **ionic.app.scss**
+3. As the final step just watch it ! In the terminal go to the project folder and type ``sass --watch scss/ionic.app.scss :www/css/index.css``
