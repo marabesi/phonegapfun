@@ -2,7 +2,7 @@
 
 A simple mobile app that uses a lot of phonegap plugins to show how they work :)
 
-##Plugins
+## [Plugins](http://plugins.cordova.io)
 
 * org.apache.cordova.battery-status
 * org.apache.cordova.camera
@@ -14,7 +14,7 @@ A simple mobile app that uses a lot of phonegap plugins to show how they work :)
 
 * Angular JS
 
-## SASS
+## [SASS](http://sass-lang.com/)
 
 The ionic framework by default comes with SASS that we can customize, the easiest way to get start with that is follow the steps bellow :
 
