@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="br.com.phonegapfun" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Phonegap Fun</name>
+    <description>
+        A simple Apache Cordova application that uses some plugins to show how to implement them and also how to use. For instance we are using angular as a main framework
+    </description>
+    <author email="matheus.marabesi@gmail.com" href="https://github.com/marabesi/">
+        Matheus Marabesi
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
