@@ -66,6 +66,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('fun.inappbrowser', {
+            url: '/inappbrowser',
+            views: {
+                'menuContent': {
+                    templateUrl: 'partials/inappbrowser.html',
+                    controller: 'InAppBrowserController'
+                }
+            }
+        })
 
     $urlRouterProvider.otherwise('/fun/detect-platform');
 });
