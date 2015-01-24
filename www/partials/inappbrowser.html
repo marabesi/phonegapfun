@@ -1,5 +1,11 @@
 <ion-view view-title="In App Browser">
-    <ion-content class="padding" ng-controller="DetectPlatformController">
-        
+    <ion-content class="padding" ng-controller="InAppBrowserController">
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">URL</span>
+                <input type="text" placeholder="http://www.google.com" ng-model="location">
+            </label>
+            <button class="button button-block button-positive" inappbrowser ng-click="search()">Search</button>
+        </div>
     </ion-content>
 </ion-view>
