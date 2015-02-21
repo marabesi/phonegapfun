@@ -12,7 +12,8 @@ A simple mobile app that uses a lot of phonegap plugins to show how they work :)
 
 ## Javascript 
 
-* Angular JS
+* [Angular JS](https://angularjs.org/)
+* [Ionic Framework](http://ionicframework.com/)
 
 ## [SASS](http://sass-lang.com/)
 
