@@ -75,6 +75,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('fun.media', {
+            url: '/media',
+            views: {
+                'menuContent': {
+                    templateUrl: 'partials/media.html',
+                    controller: 'MediaController'
+                }
+            }
+        })
 
     $urlRouterProvider.otherwise('/fun/detect-platform');
 });
