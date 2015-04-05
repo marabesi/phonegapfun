@@ -9,6 +9,7 @@ A simple mobile app that uses a lot of phonegap plugins to show how they work :)
 * org.apache.cordova.contacts
 * org.apache.cordova.device
 * org.apache.cordova.device-motion
+* org.apache.cordova.media
 
 ## Javascript 
 
