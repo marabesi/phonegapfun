@@ -11,7 +11,7 @@ A simple mobile app that uses a lot of phonegap plugins to show how they work :)
 * org.apache.cordova.device-motion
 * org.apache.cordova.media
 
-[!app](img.png)
+![app](img.png)
 
 ## Javascript 
 
